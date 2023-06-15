@@ -23,7 +23,7 @@ const Header = () => {
           </Link>
         </li>
         <li className="guest-menu">
-          <Link href="/">
+          <Link href="/guest">
             <Text size="default" weight="l">
               Guest
             </Text>

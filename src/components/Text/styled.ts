@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 import type { FontSizeMapType, FontSizeType, FontWeightType } from "./type";
+import { MediaQueries } from "@styles/theme";
 
 const FontSizeMap: FontSizeMapType = {
   sm: {
@@ -49,6 +50,11 @@ const TextWrapper = styled.div<{
   font-size:${({ size }) =>
     size ? FontSizeMap[size].desktop : FontSizeMap.default.desktop}px;
   font-weight: ${({ weight, isEn }) => getFontWeight(weight, isEn)};
+
+  @media only screen and (max-width: ${MediaQueries.tablet}px) {
+    font-size: ${({ size }) =>
+      size ? FontSizeMap[size].mobile : FontSizeMap.default.mobile}px;
+  }
 `;
 
 const TextStyle = { TextWrapper };
