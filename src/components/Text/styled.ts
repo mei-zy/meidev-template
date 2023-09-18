@@ -26,8 +26,8 @@ const FontSizeMap: FontSizeMapType = {
   },
 };
 
-const getFontWeight = (weight?: FontWeightType, isEn?: boolean) => {
-  if (isEn) {
+const getFontWeight = (weight?: FontWeightType, $isEn?: boolean) => {
+  if ($isEn) {
     if (weight === "l") return 300;
     if (weight === "b") return 700;
     return 400;
@@ -40,16 +40,17 @@ const getFontWeight = (weight?: FontWeightType, isEn?: boolean) => {
 };
 
 const TextWrapper = styled.div<{
-  isEn: boolean;
+  $isEn: boolean;
   color?: string;
   size?: FontSizeType;
   weight?: FontWeightType;
 }>`
-  font-family: ${({ isEn }) => (isEn ? "Poppins" : "Noto Sans KR")}, sans-serif;
+  font-family: ${({ $isEn }) => ($isEn ? "Poppins" : "Noto Sans KR")},
+    sans-serif;
   ${({ color }) => color && `color:${color}`}
   font-size:${({ size }) =>
     size ? FontSizeMap[size].desktop : FontSizeMap.default.desktop}px;
-  font-weight: ${({ weight, isEn }) => getFontWeight(weight, isEn)};
+  font-weight: ${({ weight, $isEn }) => getFontWeight(weight, $isEn)};
 
   @media only screen and (max-width: ${MediaQueries.tablet}px) {
     font-size: ${({ size }) =>

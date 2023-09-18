@@ -14,7 +14,7 @@ const Text = (props: TextProps) => {
 
   return (
     <S.TextWrapper
-      isEn={checkStrIsEn()}
+      $isEn={checkStrIsEn()}
       color={props.color}
       size={props.size}
       weight={props.weight}

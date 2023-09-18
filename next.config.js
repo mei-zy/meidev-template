@@ -4,9 +4,9 @@ const nextConfig = {
     mdxRs: true,
     appDir: true,
   },
-  // compiler: {
-  //   styledComponents: true,
-  // },
+  compiler: {
+    styledComponents: true,
+  },
 };
 
 const withMDX = require("@next/mdx")({
